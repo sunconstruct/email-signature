@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generátor předvyplněných e-mail podpisů</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/prefill.css">
+>
+</head>
+<body>
+    <div class="main-container">
+        <div class="jumbotron">
+            <h1 class="display-4">Generátor předvyplněných e-mail podpisů</h1>
+            <p class="lead">V tomto generátoru je možné připravit předvyplněný email podpis pro nové zaměstnance k zaslání formou web odkazu</p>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">1. Vyplňte údaje o zaměstnanci</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="employeeForm">
+                            <!-- Form fields will be dynamically added here -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		 <div class="row mt-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">2. Doprovodný text pro vložení do emailu</h5>
+                    </div>
+                    <div class="card-body">
+							<p class="text-muted mb-3">
+								Každé slovo obsahující <b>"odkaz"</b> (případně i další část textu uzavřená se slovem "odkaz" do uvozovek) bude fungovat jako odkaz na generátor podpisu
+								Pokud v textu nebude žádne slovo "odkaz" doplní se automaticky na konec</p>
+							<div class="form-group">
+								<textarea id="hrComment" class="form-control" rows="5" name="hrComment"></textarea>
+							</div>
+					</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">3. Vygenerovaná web adresa s předvyplněným email podpisem</h5>
+                    </div>
+                    <div class="card-body">
+							<p class="text-muted mb-3">
+								Níže je vygenerovaný text pro vložení do emailu. Kliknutím namodré pole nebo odkaz si můžete ověřit korektní předvyplnění email podpisu</p>
+                        <div id="urlOutput" role="button" tabindex="0"></div>
+                        <button id="copyUrlButton" class="btn btn-primary mt-3">Zkopírovat text do schránky</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmation">
+        Odkaz na předvyplněný email podpis byl <strong>zkopírována do schránky</strong>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/templator-input-formatters.js"></script>
+    <script src="js/prefill.js"></script>
+   
+</body>
+</html>

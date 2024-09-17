@@ -1,0 +1,140 @@
+body {
+   padding-top: 2em;
+}
+
+.card {
+   margin-top: 2em;
+}
+
+
+.form-control::placeholder {
+    color: lightgrey;
+/*    padding-left: 0px; */
+}
+
+html {
+   -webkit-text-size-adjust: 100%;
+   /* Prevent font scaling in landscape while allowing user zoom */
+}
+
+kbd {
+   background-color: #9cb0d1;
+   text-decoration: none;
+}
+
+.jumbotron {
+   height: 160px;
+   padding-bottom: 20px;
+   padding-top: 20px;
+}
+
+.btn-primary {
+   background-color: #378768;
+   text-decoration: none;
+   border: none;
+}
+
+.btn-primary:hover {
+   background-color: #4cc495;
+   text-decoration: none;
+   border: none;
+}
+
+i {
+   color: #9cb0d1;
+   text-decoration: none;
+}
+
+.tooltip-inner {
+   background-color: #11223d;
+   max-width: 350px;
+}
+
+#confirmation {
+   opacity: 0;
+   transition: opacity 0.5s;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #ccffcc;
+   padding: 25px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   z-index: 9999;
+}
+
+#confirmation.show {
+   opacity: 1;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group input,
+.form-group label {
+   cursor: text;
+}
+
+.form-group {
+   position: relative;
+   z-index: 1;
+}
+
+#confirmation i {
+   font-size: 20px;
+   color: #457552;
+   margin-bottom: 10px;
+   border-radius: 50%;
+   padding: 10px;
+}
+
+.img-size {
+   /* 	padding: 0;
+         margin: 0; */
+   margin: 10;
+   height: 644px;
+   width: 1015px;
+   background-size: cover;
+   overflow: hidden;
+}
+
+.modal-content {
+   width: 1015px;
+   border: none;
+}
+
+.modal-body {
+   padding: 0;
+}
+
+.carousel-control-prev-icon {
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+   width: 40px;
+   height: 64px;
+}
+
+.carousel-control-next-icon {
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+   width: 40px;
+   height: 64px;
+}
+
+.carousel-caption {
+   background-color: rgba(0, 0, 0, 0.6);
+   padding: 10px 20px;
+   width: 100%;
+   font-size: 18px;
+   /* Add this property to make the caption width 100% */
+   left: 0;
+   /* Add this property to position the caption at the left edge */
+}
+
+.modal-dialog {
+   margin: 0 auto;
+   /* Add this property to center the modal horizontally */
+   margin-top: 2%;
+   /* Add this property to center the modal vertically */
+}

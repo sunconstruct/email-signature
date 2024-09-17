@@ -1,0 +1,94 @@
+  body {
+            padding-top: 2em;
+        }
+        .main-container {
+            width: 75%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card {
+            margin-top: 2em;
+        }
+        .card-header {
+            background-color: #E9ECEF;
+			padding: 15px;
+        }
+		
+	
+
+		.card-body {
+            background-color: #FCFCFC;
+			padding: 25px;
+        }
+		
+		.form-control {
+    margin-bottom: 20px; /* Adjust this value to control the space between input fields */
+}
+
+        .form-control::placeholder {
+            color: lightgrey;
+			
+        }
+        .btn-primary {
+            background-color: #378768;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #4cc495;
+            border: none;
+        }
+        #urlOutput {
+            background-color: #e6f3ff;
+            padding: 25px;
+            border-radius: 5px;
+			margin-bottom: 10px;
+			
+            word-wrap: break-word;
+            cursor: pointer;
+            transition: background-color 0.3s;
+			width: 
+			min-height: 120px; 
+        }
+        #urlOutput:hover {
+            background-color: #d0e8ff;
+        }
+        #confirmation {
+            opacity: 0;
+            transition: opacity 0.5s;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ccffcc;
+            padding: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            z-index: 9999;
+        }
+        #confirmation.show {
+            opacity: 1;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .error-message {
+            color: red;
+            font-size: 0.875em;
+            margin-top: 0.25rem;
+        }
+		#urlOutput a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+#urlOutput a:hover {
+    color: #004499;
+    text-decoration: underline;
+}
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}

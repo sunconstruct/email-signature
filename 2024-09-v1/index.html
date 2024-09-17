@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="cs">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+      <meta name="format-detection" content="telephone=no" class="">
+      <meta name="format-detection" content="address=no" class="">
+      <meta name="format-detection" content="email=no" class="">
+	  <link rel="icon" type="image/png" href="img/favicon.ico">
+      <title>email signature generator</title>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- project CSS -->
+      <link rel="stylesheet" href="css/project.css">
+      <link rel="stylesheet" href="css/fontawesome.min.css">
+   </head>
+   <body>
+      <div id="function-allowed" class="container d-none">
+         <div class="jumbotron">
+            <h1 class="display-4">online generátor email podpisu<img data-src="img/logo-web.png" class="rounded float-right" alt="..." width="200" height="44"></h1>
+            <p class="lead">pro nejlepší výsledek použjte web prohlížeč Google Chrome a nebo Microsoft Edge</p>
+            </p>
+         </div>
+         <div class="row">
+            <div class="col">
+               <div class="card">
+                  <div class="card-header">
+                     <p class="h5" style="margin-top: 15px;">1. vyplňte prosím níže uvedená vstupní pole.</p>
+                     </br>
+                     <div id="templator-form-container"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </br>
+         <div class="row">
+            <div class="col">
+               <div class="card">
+                  <div class="card-header">
+                     <p class="h5" style="margin-top: 15px;">2. zde je zobrazen váš email podpis</p>
+                     </br>
+                     <p>Kliknutím na &nbsp;&nbsp;<a href="" id="templator-copy-to-clipboard-button" class="btn btn-info btn-sm">toto tlačítko</a>&nbsp;&nbsp;se váš email podpis zkopíruje do schránky. Pokračujte na bod 3. níže</p>
+                  </div>
+                  <div class="card-body">
+                     <div class="card-text">
+                        <div id="templator-preview-container"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </br>
+         <div class="row">
+            <div class="col">
+               <div class="card">
+                  <div class="card-header">
+                     <p class="h5" style="margin-top: 15px;">3. vložte podpis do vašeho email klienta</p>
+                     </br>
+                     <p class="card-text" style="margin-bottom: 10px;">použijte <kbd data-toggle="tooltip" data-html="true" title="<img src='img/keyPC_ctrl+v.jpg'\>">CTRL+V</kbd> ve Windows nebo <kbd data-toggle="tooltip" data-html="true" title="<img src='img/keyApple_cmd+v.jpg'\>">⌘+V</kbd> v macOS pro vložení podpisu ze schránky</p>
+                  </div>
+                  <div class="card-body">
+                     </br>
+                     návod pro <a href="#" data-toggle="modal" data-target="#docs_outlook_win">Outlook v systému Windows</a>&nbsp;
+                     <!-- <a href="https://support.office.com/cs-cz/article/create-and-add-a-signature-to-messages-8ee5d4f4-68fd-464a-a1c1-0e1c80bb27f2" target="_blank"><span style="color:#b1b3b5;">(více &rarr;)</span></a>
+                        -->
+                     </br>
+                     návod pro <a href="#" data-toggle="modal" data-target="#docs_outlook_mac">Outlook v systému macOS</a>&nbsp;
+                     <!-- <a href="https://support.microsoft.com/cs-cz/office/vytvo%C5%99en%C3%AD-a-vlo%C5%BEen%C3%AD-podpisu-v-outlooku-pro-mac-f4d21492-0956-4429-95ad-2769745b539c" target="_blank"><span style="color:#b1b3b5;">(více &rarr;)</span></a>
+                        -->
+                     </br>
+                     návod pro <a href="#" data-toggle="modal" data-target="#docs_outlook_web">Outlook webmail</a>&nbsp;
+                     <!-- <a href="https://support.office.com/cs-cz/article/create-and-add-an-email-signature-in-outlook-web-app-0f230564-11b9-4239-83de-f10cbe4dfdfc" target="_blank"><span style="color:#b1b3b5;">(více &rarr;)</span></a>
+                        -->
+                     </br>
+                     návod pro <a href="#" data-toggle="modal" data-target="#docs_windows_mail">program "Windows Pošta"</a>&nbsp;
+                     </br>
+                     </br></br>
+                     návod pro <a href="https://support.apple.com/guide/mail/create-and-use-signatures-mail11943/mac" target="_blank">Apple Mail</a>
+                     </br>
+                     návod pro <a href="https://support.google.com/mail/answer/8395?co=GENIE.Platform%3DDesktop&hl=cs" target="_blank">Gmail nebo Chromebook</a>
+                     </br>
+                     <br />
+                  </div>
+               </div>
+            </div>
+         </div>
+         </br></br></br></br>
+         <div class="row d-none">
+            <div class="col">
+               <div class="card">
+                  <div class="card-header">Kód</div>
+                  <div class="card-body">
+                     <div class="card-text">
+                        <div class="form-group" id="templator-code-field">
+                           <textarea class="form-control" id="templator-code-field" rows="10"></textarea>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- funkcionalita nepovolena - BEGIN -->
+      <div id="function-disabled" class="container d-none">
+         <div class="row justify-content-center">
+            <div class="col-sm-6">
+               <p class="alert alert-danger"> We’re sorry. This application is not intended for use on mobile platforms. </p>
+            </div>
+         </div>
+      </div>
+      <!-- funkcionalita nepovolena - END -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="js/jquery-3.1.1.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Mobile detection script -->
+      <script src="js/mobile-detector.js"></script>
+      
+      <!-- Templator loader script -->
+      <script src="js/templator-loader.js"></script>
+	  
+	  <!-- copy to a clipboard confirmation div -->
+	  
+		  <div id="confirmation">
+			 <p>&nbsp;&nbsp;&nbsp;&nbsp;Váš email podpis byl <b>zkopírován do schránky</b> &nbsp;&nbsp;&nbsp;&nbsp; </p>
+		  </div>
+	  
+	  
+	  <!-- documentation divs -->
+	  
+		  <!-- outlook for windows -->
+		  <div class="modal fade" id="docs_outlook_win" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+		  </div>
+		  <!-- outlook for macos -->
+		  <div class="modal fade" id="docs_outlook_mac" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+		  </div>
+		  <!-- outlook webmail -->
+		  <div class="modal fade" id="docs_outlook_web" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+		  </div>
+		  <!-- windows mail -->
+		  <div class="modal fade" id="docs_windows_mail" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+		  </div>
+	  
+	  
+		  <!-- load documentation divs from external files -->
+		  <script>
+			 $(document).ready(function() {
+			   // Load external HTML files and implement lazy loading
+			   function loadAndProcessHTML(selector, url) {
+				 $(selector).load(url, function() {
+				   $(this).find('img').each(function() {
+					 var img = $(this);
+					 img.attr('data-src', img.attr('src'));
+					 img.removeAttr('src');
+				   });
+				   implementLazyLoading();
+				 });
+			   }
+
+			   loadAndProcessHTML('#docs_outlook_mac', 'docs/outlook_mac.html');
+			   loadAndProcessHTML('#docs_outlook_web', 'docs/outlook_web.html');
+			   loadAndProcessHTML('#docs_outlook_win', 'docs/outlook_win.html');
+			   loadAndProcessHTML('#docs_windows_mail', 'docs/windows_mail.html');
+			 });
+		  </script>
+   </body>
+</html>
