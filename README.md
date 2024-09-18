@@ -53,6 +53,70 @@ To add new fields to the signature form:
 1. Modify the `template.html` file to include a new field in the form of `{{ fieldName label="Field Label" placeholder="Field Placeholder" }}`.
 2. The new field will automatically be picked up by the `Templator` engine and added to the form.
 
+---
+
 ### Script Initialization
 The Templator loader (`templator-loader.js`) automatically initializes the application by loading the necessary scripts and invoking the `Templator.AjaxLoader` to process the template and generate the form.
 
+Here is the updated **JavaScript section** for the README:
+
+## JavaScript Files
+
+### 1. `templator-loader.js`
+- **Purpose**: Manages the loading of various Templator components and initializes the Templator system after all scripts are loaded.
+- **Key Features**: 
+  - Loads the required scripts sequentially.
+  - Initializes the template loading process.
+  - Supports lazy loading of images.
+
+### 2. `templator-core.js`
+- **Purpose**: The core functionality of the Templator system, responsible for processing the template and handling URL parameters.
+- **Key Features**: 
+  - Parses templates for fields using `{{}}` syntax.
+  - Retrieves values from URL parameters and template defaults.
+  - Generates form fields based on the template and URL parameters.
+
+### 3. `templator-form-generator.js`
+- **Purpose**: Dynamically generates forms based on the template fields and handles form validation.
+- **Key Features**: 
+  - Creates form input fields based on the parsed template.
+  - Handles form submission and validation (email and phone numbers).
+  - Updates the form preview as input changes.
+
+### 4. `templator-ajax-loader.js`
+- **Purpose**: Loads templates asynchronously using AJAX and initializes the Templator form generator.
+- **Key Features**: 
+  - Fetches the HTML template via AJAX.
+  - Passes the template data to `templator-core.js` for field extraction and form generation.
+
+### 5. `templator-input-formatters.js`
+- **Purpose**: Provides input validation and formatting utilities for the form fields.
+- **Key Features**: 
+  - Validates email fields using a regex pattern.
+  - Formats phone numbers according to country-specific formats.
+  - Provides static phone number formatting.
+
+### 6. `templator-ui-utils.js`
+- **Purpose**: Contains utility functions for user interface interactions.
+- **Key Features**: 
+  - Focuses on the first input field in the form when the page loads.
+  - Displays a confirmation message when content is copied to the clipboard.
+
+### 7. `templator-clipboard.js`
+- **Purpose**: Adds clipboard functionality to copy the generated email signature.
+- **Key Features**: 
+  - Copies the content of the form preview to the clipboard.
+  - Uses `execCommand('copy')` to execute the copy action.
+
+### 8. `prefill.js`
+- **Purpose**: Handles the logic for generating pre-filled forms via URL parameters and dynamic template rendering.
+- **Key Features**: 
+  - Loads the template and parses fields for prefilled data.
+  - Updates the URL output based on user inputs and generates a pre-filled URL for email signatures.
+  - Manages copying the generated content to the clipboard.
+
+### 9. `mobile-detector.js`
+- **Purpose**: Detects if the user is accessing the application from a mobile device and adjusts the page display accordingly.
+- **Key Features**: 
+  - Detects mobile devices using user-agent string matching.
+  - Displays mobile-specific content or disables certain features for mobile devices.
