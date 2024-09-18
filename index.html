@@ -2,21 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Parameter Link Generator</title>
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="5;url=https://signature.sunconstruct.cz/2024-09-v1/index.html">
+    <script>
+        (function() {
+            // Define the target base URL as a constant
+            const TARGET_BASE = "https://signature.sunconstruct.cz/2024-09-v1/";
+
+            /**
+             * Constructs the target URL by appending 'index.html' and current URL parameters.
+             * @returns {string} The complete target URL.
+             */
+            function constructTargetURL() {
+                // Ensure the target base ends with a slash
+                let base = TARGET_BASE.endsWith('/') ? TARGET_BASE : TARGET_BASE + '/';
+
+                // Append 'index.html' to the base URL
+                const targetURL = base + "index.html";
+
+                // Get the current page's URL parameters
+                const urlParams = window.location.search; // Includes the "?" at the beginning
+
+                // Combine the target URL with the current URL parameters
+                return targetURL + urlParams;
+            }
+
+            /**
+             * Redirects the browser to the constructed target URL.
+             */
+            function redirectToTarget() {
+                const targetURL = constructTargetURL();
+                window.location.replace(targetURL);
+            }
+
+            // Execute the redirection when the DOM is fully loaded
+            document.addEventListener('DOMContentLoaded', redirectToTarget);
+        })();
+    </script>
     <style>
+        /* Optional: Style the page in case JavaScript is disabled or redirection fails */
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            text-align: center;
+            padding: 50px;
         }
-        .link-container {
-            margin-top: 20px;
+        .message {
+            font-size: 1.2em;
+            color: #333;
         }
         a {
             color: #1a0dab;
             text-decoration: none;
-            font-size: 1.2em;
+            font-weight: bold;
         }
         a:hover {
             text-decoration: underline;
@@ -24,60 +61,25 @@
     </style>
 </head>
 <body>
-    <h1>URL Parameter Link Generator</h1>
-    <p>This page generates a link based on the current URL parameters.</p>
-    
-    <div class="link-container" id="linkContainer">
-        <!-- The generated link will appear here -->
+    <div class="message">
+        Redirecting you to the target page. If you are not redirected automatically, 
+        <a href="">click here</a>.
     </div>
-
     <script>
-        // Define the target base URL as a constant
-        const targetBase = "https://signature.sunconstruct.cz/2024-09-v1/";
+        // Update the href of the fallback link in case JavaScript has already run
+        (function() {
+            const fallbackLink = document.querySelector('a');
+            const TARGET_BASE = "https://signature.sunconstruct.cz/2024-09-v1/";
 
-        // Function to get the current page's URL parameters
-        function getCurrentURLParameters() {
-            return window.location.search; // Includes the "?" at the beginning
-        }
-
-        // Function to construct the new URL
-        function constructTargetURL() {
-            // Ensure the target base ends with a slash
-            let base = targetBase;
-            if (!base.endsWith('/')) {
-                base += '/';
+            function constructTargetURL() {
+                let base = TARGET_BASE.endsWith('/') ? TARGET_BASE : TARGET_BASE + '/';
+                const targetURL = base + "index.html";
+                const urlParams = window.location.search;
+                return targetURL + urlParams;
             }
 
-            // Append 'index.html' to the base URL
-            const targetURL = base + "index.html";
-
-            // Get the current URL parameters
-            const urlParams = getCurrentURLParameters();
-
-            // Combine the target URL with the current URL parameters
-            return targetURL + urlParams;
-        }
-
-        // Function to create and display the link on the page
-        function displayLink() {
-            const linkContainer = document.getElementById('linkContainer');
-            const targetURL = constructTargetURL();
-
-            // Create an anchor element
-            const linkElement = document.createElement('a');
-            linkElement.href = targetURL;
-            linkElement.textContent = targetURL;
-            linkElement.target = "_blank"; // Opens the link in a new tab
-
-            // Optionally, add some styling or classes
-            // linkElement.classList.add('your-class-name');
-
-            // Append the link to the container
-            linkContainer.appendChild(linkElement);
-        }
-
-        // Execute the displayLink function when the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', displayLink);
+            fallbackLink.href = constructTargetURL();
+        })();
     </script>
 </body>
 </html>
