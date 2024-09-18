@@ -15,12 +15,12 @@ This project is a web-based application that generates pre-filled email signatur
 ## Redirection
 ### Redirection Files
 - `index.html` (new file):
-    - **Purpose**: This file now includes logic for automatically redirecting users to a newer version of the application located at `https://signature.sunconstruct.cz/2024-09-v1/index.html`.
+    - **Purpose**: This file now includes logic for automatically redirecting users to a newer version of the application.
     - **JavaScript-based Redirection**: Upon page load, JavaScript constructs the target URL (including any URL parameters) and redirects the user to the new URL.
     - **Fallback**: If the JavaScript fails or is disabled, a meta refresh tag will redirect users after 5 seconds.
 
 - `prefill.html` (new file):
-    - **Purpose**: This file also redirects users to a newer version of the prefill page (`https://signature.sunconstruct.cz/2024-09-v1/prefill.html`) using a meta refresh tag.
+    - **Purpose**: This file also redirects users to a newer version of the prefill page using a meta refresh tag.
 
 ## Features
 - **Dynamic Form Generation**: The form is dynamically generated based on the fields in the email signature template (`template.html`).
