@@ -1,1 +1,83 @@
-<meta http-equiv="Refresh" content="0; url='https://signature.sunconstruct.cz/2024-09-v1/'" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Parameter Link Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .link-container {
+            margin-top: 20px;
+        }
+        a {
+            color: #1a0dab;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Parameter Link Generator</h1>
+    <p>This page generates a link based on the current URL parameters.</p>
+    
+    <div class="link-container" id="linkContainer">
+        <!-- The generated link will appear here -->
+    </div>
+
+    <script>
+        // Define the target base URL as a constant
+        const targetBase = "https://signature.sunconstruct.cz/2024-09-v1/";
+
+        // Function to get the current page's URL parameters
+        function getCurrentURLParameters() {
+            return window.location.search; // Includes the "?" at the beginning
+        }
+
+        // Function to construct the new URL
+        function constructTargetURL() {
+            // Ensure the target base ends with a slash
+            let base = targetBase;
+            if (!base.endsWith('/')) {
+                base += '/';
+            }
+
+            // Append 'index.html' to the base URL
+            const targetURL = base + "index.html";
+
+            // Get the current URL parameters
+            const urlParams = getCurrentURLParameters();
+
+            // Combine the target URL with the current URL parameters
+            return targetURL + urlParams;
+        }
+
+        // Function to create and display the link on the page
+        function displayLink() {
+            const linkContainer = document.getElementById('linkContainer');
+            const targetURL = constructTargetURL();
+
+            // Create an anchor element
+            const linkElement = document.createElement('a');
+            linkElement.href = targetURL;
+            linkElement.textContent = targetURL;
+            linkElement.target = "_blank"; // Opens the link in a new tab
+
+            // Optionally, add some styling or classes
+            // linkElement.classList.add('your-class-name');
+
+            // Append the link to the container
+            linkContainer.appendChild(linkElement);
+        }
+
+        // Execute the displayLink function when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', displayLink);
+    </script>
+</body>
+</html>
