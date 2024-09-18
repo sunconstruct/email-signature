@@ -1,1 +1,34 @@
 <meta http-equiv="Refresh" content="0; url='https://signature.sunconstruct.cz/2024-09-v1/'" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+</head>
+<body>
+    <form id="redirectForm" action="" method="get">
+        <input type="hidden" id="params" name="params" value="">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the current URL
+            var currentUrl = window.location.href;
+            
+            // Extract everything after the '?'
+            var paramString = currentUrl.split('?')[1] || '';
+            
+            // Set the form action to the desired redirect URL
+            var form = document.getElementById('redirectForm');
+            form.action = 'https://signature.sunconstruct.cz/2024-09-v1/index.html';
+            
+            // Set the value of the hidden input to the extracted parameters
+            document.getElementById('params').value = paramString;
+            
+            // Submit the form
+            form.submit();
+        });
+    </script>
+</body>
+</html>
