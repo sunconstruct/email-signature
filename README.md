@@ -11,11 +11,6 @@ This project is a web-based application that generates pre-filled email signatur
 - `index.html`: The main entry point for the application. It includes a form for generating email signatures, a preview of the signature, and instructions for copying the signature to the clipboard. It also includes a redirect logic.
 - `prefill.html`: An alternative page where users can prefill details for generating email signatures. This file also includes a redirect to the new version of the prefill page.
 - `template.html`: The HTML template for the email signature. It contains placeholders for employee details such as name, position, phone, and email.
-- `templator-core.js`: Core functionality for processing templates and generating forms based on the provided template fields.
-- `templator-form-generator.js`: Contains the logic for dynamically generating forms based on the template fields.
-- `templator-ajax-loader.js`: Handles loading templates via AJAX requests.
-- `templator-loader.js`: Manages the script loading process and initializes the Templator application.
-- `prefill.js`: Handles loading the template, generating URLs with prefilled data, and providing the ability to copy generated content to the clipboard.
 
 ## Redirection
 ### Redirection Files
@@ -61,9 +56,3 @@ To add new fields to the signature form:
 ### Script Initialization
 The Templator loader (`templator-loader.js`) automatically initializes the application by loading the necessary scripts and invoking the `Templator.AjaxLoader` to process the template and generate the form.
 
-## License
-This project is licensed under the MIT License.
-
----
-
-Let me know if you'd like further changes or additions.
